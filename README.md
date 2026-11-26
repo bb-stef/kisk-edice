@@ -10,3 +10,7 @@ Web běží na GitHub Pages z větve `main`. Každý push do `main` stránku aut
 ## Co je potřeba doplnit
 
 - jména členů týmu v sekci „O nás“
+
+## Cache
+
+GitHub Pages drží `style.css` v cache prohlížeče až 10 minut. Po každé změně stylů proto zvyšte verzi v `index.html` (`style.css?v=…`), jinak se nové HTML může zobrazit se starými styly.
