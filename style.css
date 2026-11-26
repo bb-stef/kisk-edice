@@ -361,7 +361,8 @@ p { margin: 0 0 1em; }
   gap: 0 2rem;
 }
 .team li { padding: 0.7rem 0; border-bottom: 1px solid var(--line); font-weight: 500; }
-.team-intro { margin: 2rem 0 0; font-weight: 600; }
+.team-intro { margin: 0; padding-top: 2.4rem; font-weight: 600; }
+.grid-even { grid-template-columns: 1fr 1fr; }
 .uco { display: block; font-size: 0.8rem; font-weight: 400; color: var(--ink-soft); }
 
 /* Patička */
