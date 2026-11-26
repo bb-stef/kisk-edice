@@ -1,11 +1,14 @@
 :root {
-  --paper: #f7f4ef;
-  --paper-2: #ece6dc;
-  --ink: #1b1a18;
-  --ink-soft: #5a554d;
-  --line: #d6cfc3;
-  --accent: #8a3324;
-  --dark: #1f2421;
+  /* tmavá obsidiánová zelená */
+  --paper: #0f1d18;
+  --paper-2: #1c3529;
+  --ink: #ece7dc;
+  --ink-soft: #a5afa5;
+  --line: rgba(236, 231, 220, 0.14);
+  --accent: #d6a65c;
+  --dark: #08120f;
+  --footer: #050c0a;
+  --slant: 12vw;
 
   --cover-1: #c4932f;
   --cover-2: #34495a;
@@ -78,7 +81,7 @@ p { margin: 0 0 1em; }
 .nav a:hover { color: var(--ink); }
 
 /* Úvod */
-.hero { padding: clamp(4rem, 12vw, 9rem) 0 clamp(3rem, 8vw, 6rem); border-bottom: 1px solid var(--line); }
+.hero { padding: clamp(4rem, 12vw, 9rem) 0 clamp(3rem, 8vw, 6rem); }
 .hero-title {
   font-size: clamp(3.5rem, 13vw, 9.5rem);
   font-weight: 700;
@@ -95,8 +98,16 @@ p { margin: 0 0 1em; }
 /* Sekce */
 .section { padding: clamp(4rem, 9vw, 7rem) 0; }
 .section-tint { background: var(--paper-2); }
-.section-dark { background: var(--dark); color: #ece8e1; }
-.section-dark .eyebrow { color: #d9a85a; }
+.section-dark { background: var(--dark); }
+
+/* šikmé předěly: hrana klesá zleva doprava (opačně než Paseka) */
+.section-tint, .section-dark {
+  position: relative;
+  padding-top: calc(clamp(4rem, 9vw, 7rem) + var(--slant));
+  padding-bottom: calc(clamp(4rem, 9vw, 7rem) + var(--slant));
+  clip-path: polygon(0 0, 100% var(--slant), 100% 100%, 0 calc(100% - var(--slant)));
+}
+.section-tint.last { clip-path: polygon(0 0, 100% var(--slant), 100% 100%, 0 100%); padding-bottom: clamp(4rem, 9vw, 7rem); }
 
 .grid-2 {
   display: grid;
@@ -269,8 +280,8 @@ p { margin: 0 0 1em; }
   padding: 1.1rem 0;
   border-bottom: 1px solid rgba(255,255,255,.14);
 }
-.t-date { font-weight: 600; font-size: 0.9rem; color: #bdb6aa; }
-.t-key .t-date { color: #d9a85a; }
+.t-date { font-weight: 600; font-size: 0.9rem; color: var(--ink-soft); }
+.t-key .t-date { color: var(--accent); }
 .t-key .t-text { font-weight: 600; }
 
 /* Rozpočet */
@@ -348,10 +359,10 @@ p { margin: 0 0 1em; }
 .team li { padding: 0.7rem 0; border-bottom: 1px solid var(--line); font-weight: 500; }
 
 /* Patička */
-.site-footer { background: var(--ink); color: #c9c3b8; padding: 2.5rem 0; font-size: 0.85rem; }
+.site-footer { background: var(--footer); color: var(--ink-soft); padding: 2.5rem 0; font-size: 0.85rem; }
 .footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .site-footer p { margin: 0; }
-.site-footer .brand-name { color: #fff; }
+.site-footer .brand-name { color: var(--ink); }
 
 /* Mobil */
 @media (max-width: 900px) {
