@@ -178,7 +178,7 @@ p { margin: 0 0 1em; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.35) 100%);
+  background: radial-gradient(ellipse 90% 26% at 70% 50%, rgba(0,0,0,.30), transparent 75%);
   z-index: -1;
   pointer-events: none;
 }
@@ -193,7 +193,8 @@ p { margin: 0 0 1em; }
 }
 .cover-2 .cover-art {
   background:
-    radial-gradient(ellipse 16% 42% at 63% 36%, rgba(238,235,228,.95) 0 55%, transparent 100%),
+    radial-gradient(ellipse 13% 24% at 34% 20%, rgba(238,235,228,.95) 0 50%, transparent 100%),
+    radial-gradient(ellipse 9% 12% at 40% 86%, rgba(238,235,228,.45) 0 40%, transparent 100%),
     radial-gradient(ellipse 50% 35% at 25% 28%, #a9bcc7 0, transparent 70%),
     radial-gradient(ellipse 60% 30% at 70% 85%, #1f2c36 0, transparent 70%),
     linear-gradient(180deg, #33495a 0%, #6f899a 48%, #4b6272 75%, #1e2a33 100%);
@@ -201,7 +202,7 @@ p { margin: 0 0 1em; }
 .cover-3 .cover-art {
   background:
     radial-gradient(circle at 32% 30%, #f6c46a 0 2.5%, rgba(240,150,70,.55) 6%, transparent 14%),
-    linear-gradient(162deg, transparent 0 52%, #77716d 55%, #5b5653 66%, transparent 70%),
+    linear-gradient(162deg, transparent 0 66%, #77716d 69%, #5b5653 80%, transparent 84%),
     radial-gradient(ellipse 70% 40% at 75% 15%, #8a2c2c 0, transparent 70%),
     linear-gradient(180deg, #5c1f22 0%, #3a1719 55%, #171012 100%);
 }
@@ -221,9 +222,12 @@ p { margin: 0 0 1em; }
   position: absolute;
   left: 8cqw;
   right: 8cqw;
-  bottom: 8cqw;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
   text-shadow: 0 1px 12px rgba(0,0,0,.25);
 }
 .cover-author { font-size: 4.8cqw; font-weight: 600; margin-bottom: 1.5cqw; }
