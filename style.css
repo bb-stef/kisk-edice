@@ -207,6 +207,65 @@ p { margin: 0 0 1em; }
 .t-key .t-date { color: #d9a85a; }
 .t-key .t-text { font-weight: 600; }
 
+/* Rozpočet */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: clamp(2.5rem, 6vw, 4rem) 0 2.5rem;
+  border-top: 1px solid var(--ink);
+}
+.stat { padding: 1.25rem 1.25rem 0 0; display: flex; flex-direction: column; gap: 0.3rem; }
+.stat + .stat { padding-left: 1.25rem; border-left: 1px solid var(--line); }
+.stat-num { font-size: clamp(1.3rem, 2.4vw, 1.75rem); font-weight: 700; letter-spacing: -0.02em; white-space: nowrap; }
+.stat-label { font-size: 0.85rem; color: var(--ink-soft); }
+
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.budget { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.budget th, .budget td { padding: 0.65rem 1rem 0.65rem 0; text-align: left; vertical-align: top; }
+.budget th {
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 600; color: var(--ink-soft); border-bottom: 1px solid var(--ink);
+}
+.budget td { border-bottom: 1px solid var(--line); }
+.budget td:nth-child(2), .budget th:nth-child(2) { text-align: right; white-space: nowrap; padding-right: 2rem; }
+.budget td:last-child { color: var(--ink-soft); }
+.budget tfoot td { font-weight: 600; color: var(--ink); border-bottom: 1px solid var(--line); }
+.budget tfoot tr:first-child td { border-top: 1px solid var(--ink); }
+.budget tfoot tr.sub td { font-weight: 400; }
+.budget tfoot tr.sub td:last-child { color: var(--ink-soft); }
+
+.budget-summary td, .budget-summary th { text-align: right; white-space: nowrap; padding-right: 0; padding-left: 1rem; }
+.budget-summary td:first-child, .budget-summary th:first-child { text-align: left; padding-left: 0; }
+.budget-summary td:last-child { color: var(--ink); }
+.budget-summary td:nth-child(2), .budget-summary th:nth-child(2) { padding-right: 0; }
+
+.budget-heading { margin-top: clamp(3rem, 6vw, 4rem); }
+.budget-detail { border-top: 1px solid var(--line); }
+.budget-detail:last-of-type { border-bottom: 1px solid var(--line); }
+.budget-detail summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  font-weight: 600;
+}
+.budget-detail summary::-webkit-details-marker { display: none; }
+.budget-detail summary span:first-child::before {
+  content: "+";
+  display: inline-block;
+  width: 1.4rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+.budget-detail[open] summary span:first-child::before { content: "−"; }
+.budget-detail .table-scroll { padding-bottom: 1.5rem; }
+
+.assumptions { margin-top: clamp(2.5rem, 5vw, 3.5rem); max-width: 760px; }
+.assumptions ul { margin: 0; padding-left: 1.1rem; font-size: 0.92rem; color: var(--ink-soft); }
+.assumptions li { margin-bottom: 0.4rem; }
+
 /* Výhled */
 .upcoming { padding-left: 1.1rem; margin: 0 0 1.25rem; }
 .upcoming li { margin-bottom: 0.3rem; }
@@ -233,6 +292,9 @@ p { margin: 0 0 1em; }
   .pillars { grid-template-columns: repeat(2, 1fr); }
   .pillars li:nth-child(3) { padding-left: 0; border-left: 0; }
   .pillars li { padding-bottom: 1.5rem; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(3) { padding-left: 0; border-left: 0; }
+  .stat { padding-bottom: 1.25rem; }
   .books, .people { grid-template-columns: 1fr; max-width: 520px; }
   .book { display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; align-items: start; }
   .book .cover { margin-bottom: 0; padding: 12% 10%; }
