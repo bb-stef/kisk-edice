@@ -11,6 +11,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="paint" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="60" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -85,22 +91,20 @@
     <div class="wrap">
       <p class="eyebrow">Knihy</p>
       <h2>První tři svazky</h2>
-      <p class="section-lead">Obálky mají jednotnou typografickou podobu bez ilustrací. Každý svazek má vlastní barvu a&nbsp;barevný pás nese místo a&nbsp;roky, o&nbsp;kterých kniha vypráví. Pás se svazek od svazku posouvá níž, podobně jako čas na ose 20.&nbsp;století. Na hřbetní straně je číslo svazku a&nbsp;jméno překladatele.</p>
+      <p class="section-lead">Obálky jsou abstraktní malby bez figur a&nbsp;fotografií. Každý svazek má vlastní paletu, která odkazuje k&nbsp;místu a&nbsp;náladě knihy: medová a&nbsp;karpatská zeleň Bukoviny, vybledlá modrošedá zapomnění, temná vínová a&nbsp;žulová šeď kyjevských devadesátek. Typografie je u&nbsp;všech svazků stejná a&nbsp;na obálce je vždy jméno překladatele.</p>
 
       <div class="books">
 
         <article class="book">
           <div class="cover cover-1" aria-hidden="true">
-            <span class="cover-spine">Pamětnice 1 · přeložila Věra Lendělová</span>
-            <div class="cover-head">
+            <div class="cover-art"></div>
+            <span class="cover-series">Pamětnice 1</span>
+            <span class="cover-publisher">[Název<br>nakladatelství]</span>
+            <div class="cover-text">
               <span class="cover-author">Marija Matios</span>
               <span class="cover-title">Sladká Darusja</span>
+              <span class="cover-translator">Přeložila Věra Lendělová</span>
             </div>
-            <div class="cover-band">
-              <span class="cover-place">Bukovina</span>
-              <span class="cover-years">30. a 40. léta</span>
-            </div>
-            <span class="cover-publisher">[Název nakladatelství]</span>
           </div>
           <div class="book-meta">
             <p class="book-date">září 2027</p>
@@ -114,16 +118,14 @@
 
         <article class="book">
           <div class="cover cover-2" aria-hidden="true">
-            <span class="cover-spine">Pamětnice 2 · přeložila Tereza Chlaňová</span>
-            <div class="cover-head">
+            <div class="cover-art"></div>
+            <span class="cover-series">Pamětnice 2</span>
+            <span class="cover-publisher">[Název<br>nakladatelství]</span>
+            <div class="cover-text">
               <span class="cover-author">Tanja Maljarčuk</span>
               <span class="cover-title">Zapomnění</span>
+              <span class="cover-translator">Přeložila Tereza Chlaňová</span>
             </div>
-            <div class="cover-band">
-              <span class="cover-place">Vídeň · Kyjev</span>
-              <span class="cover-years">1882–1931</span>
-            </div>
-            <span class="cover-publisher">[Název nakladatelství]</span>
           </div>
           <div class="book-meta">
             <p class="book-date">říjen 2027</p>
@@ -137,16 +139,14 @@
 
         <article class="book">
           <div class="cover cover-3" aria-hidden="true">
-            <span class="cover-spine">Pamětnice 3 · přeložil Petr Ch. Kalina</span>
-            <div class="cover-head">
+            <div class="cover-art"></div>
+            <span class="cover-series">Pamětnice 3</span>
+            <span class="cover-publisher">[Název<br>nakladatelství]</span>
+            <div class="cover-text">
               <span class="cover-author">Oksana Lucyšyna</span>
               <span class="cover-title">Ivan a&nbsp;Feba</span>
+              <span class="cover-translator">Přeložil Petr Ch. Kalina</span>
             </div>
-            <div class="cover-band">
-              <span class="cover-place">Kyjev · Užhorod</span>
-              <span class="cover-years">90. léta</span>
-            </div>
-            <span class="cover-publisher">[Název nakladatelství]</span>
           </div>
           <div class="book-meta">
             <p class="book-date">listopad 2027</p>
