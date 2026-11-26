@@ -139,7 +139,7 @@ p { margin: 0 0 1em; }
   gap: clamp(2rem, 4vw, 3rem);
   margin-top: 1rem;
 }
-.section-lead { max-width: 680px; color: var(--ink-soft); margin: -0.5rem 0 2.5rem; }
+.section-lead { max-width: 680px; color: var(--ink-soft); margin: 0 0 2.5rem; }
 
 /* Obálky: abstraktní malby, jednotná typografie */
 .cover {
