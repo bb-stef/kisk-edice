@@ -128,35 +128,85 @@ p { margin: 0 0 1em; }
   gap: clamp(2rem, 4vw, 3rem);
   margin-top: 1rem;
 }
+.section-lead { max-width: 680px; color: var(--ink-soft); margin: -0.5rem 0 2.5rem; }
+
+/* Obálky: jednotný typografický systém */
 .cover {
+  --band: var(--cover-1);
+  --band-top: 44%;
+  container-type: inline-size;
+  position: relative;
   aspect-ratio: 125 / 200;
-  padding: 10% 10% 12%;
-  display: flex;
-  flex-direction: column;
-  color: #fbf8f2;
+  background: #e9e5dd;
+  color: var(--ink);
+  overflow: hidden;
   box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 12px 30px -12px rgba(0,0,0,.35);
   margin-bottom: 1.75rem;
   transition: transform .25s ease;
 }
 .book:hover .cover { transform: translateY(-4px); }
-.cover-1 { background: var(--cover-1); }
-.cover-2 { background: var(--cover-2); }
-.cover-3 { background: var(--cover-3); }
-.cover-series {
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 600;
-  opacity: .8;
+.cover-1 { --band: var(--cover-1); --band-top: 44%; }
+.cover-2 { --band: var(--cover-2); --band-top: 56%; }
+.cover-3 { --band: var(--cover-3); --band-top: 68%; }
+
+/* svislý text u hřbetu: číslo svazku a překladatel */
+.cover-spine {
+  position: absolute;
+  left: 4.5cqw;
+  bottom: 6cqw;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 3.1cqw;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: var(--ink-soft);
+}
+.cover-head {
+  position: absolute;
+  top: 9cqw;
+  left: 14cqw;
+  right: 8cqw;
+  display: flex;
+  flex-direction: column;
+  gap: 3cqw;
+}
+.cover-author {
+  font-size: 4.4cqw;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 .cover-title {
-  margin-top: auto;
-  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-size: 13cqw;
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
 }
-.cover-author { margin-top: 0.75rem; font-size: 0.95rem; font-weight: 400; }
+.cover-band {
+  position: absolute;
+  top: var(--band-top);
+  left: 11cqw;
+  right: 0;
+  height: 17%;
+  background: var(--band);
+  color: #fbf8f2;
+  padding: 0 8cqw 0 3cqw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1cqw;
+}
+.cover-place { font-size: 4.4cqw; font-weight: 500; }
+.cover-years { font-size: 7.5cqw; font-weight: 700; letter-spacing: -0.01em; line-height: 1; }
+.cover-publisher {
+  position: absolute;
+  right: 8cqw;
+  bottom: 6cqw;
+  font-size: 2.8cqw;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
 
 .book-date { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem; }
 .book h3 { font-size: 1.4rem; }
@@ -297,10 +347,7 @@ p { margin: 0 0 1em; }
   .stat { padding-bottom: 1.25rem; }
   .books, .people { grid-template-columns: 1fr; max-width: 520px; }
   .book { display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; align-items: start; }
-  .book .cover { margin-bottom: 0; padding: 12% 10%; }
-  .book .cover-title { font-size: 1.15rem; }
-  .book .cover-author { font-size: 0.75rem; }
-  .book .cover-series { font-size: 0.55rem; }
+  .book .cover { margin-bottom: 0; }
 }
 @media (max-width: 720px) {
   .grid-2 { grid-template-columns: 1fr; gap: 1rem; }
@@ -311,9 +358,6 @@ p { margin: 0 0 1em; }
   .pillars { grid-template-columns: 1fr; }
   .pillars li, .pillars li + li { padding-left: 0; border-left: 0; }
   .book { grid-template-columns: 1fr; }
-  .book .cover { width: 60%; padding: 10%; }
-  .book .cover-title { font-size: 1.5rem; }
-  .book .cover-author { font-size: 0.9rem; }
-  .book .cover-series { font-size: 0.65rem; }
+  .book .cover { width: 70%; }
   .team { grid-template-columns: 1fr; }
 }
