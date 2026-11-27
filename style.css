@@ -287,6 +287,8 @@ p { margin: 0 0 1em; }
   border-bottom: 1px solid rgba(255,255,255,.14);
 }
 .t-date { font-weight: 600; font-size: 0.9rem; color: var(--ink-soft); }
+.t-sub { color: var(--ink-soft); font-size: 0.9rem; }
+.promo-note { margin: 1rem 0 0; font-size: 0.85rem; color: var(--ink-soft); }
 .t-key .t-date { color: var(--accent); }
 .t-key .t-text { font-weight: 600; }
 
