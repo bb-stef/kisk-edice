@@ -320,6 +320,7 @@ p { margin: 0 0 1em; }
 .budget-summary td:last-child { color: var(--ink); }
 .budget-summary td:nth-child(2), .budget-summary th:nth-child(2) { padding-right: 0; }
 
+.budget-4 td:nth-child(3), .budget-4 th:nth-child(3) { text-align: right; white-space: nowrap; padding-right: 2rem; color: var(--ink); }
 .budget-heading { margin-top: clamp(3rem, 6vw, 4rem); }
 .budget-detail { border-top: 1px solid var(--line); }
 .budget-detail:last-of-type { border-bottom: 1px solid var(--line); }
